@@ -104,8 +104,6 @@ noremap <tab> :MBEbp <Enter>
 
 " Projectify
 "source ~/project.vim 
-source ~/Sites/projects/joshisgross/.vimproject
-source ~/Sites/projects/clients/my1channel/.vimproject
 
 " Assembly code: highlight lines over 80 columns
 autocmd FileType asm au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)

@@ -110,7 +110,7 @@ autocmd FileType asm au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v
 autocmd FileType asm au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 
 " Custom highlighting
-source ~/highlights.vim 
+so ~/.vim/plugin/highlights.vim
 Highlight 4 TODO
 
 " set "make" command when editing php files

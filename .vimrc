@@ -92,10 +92,6 @@ noremap <F8> :%s/[‘’]/'/g<Enter>:%s/[“”]/"/g<Enter>:%s/^\s*[0-9]*//g<Ent
 " modern GUI editors)
 set backspace=2
 
-" ----- Dictionary completion for PHP -----
-" The completion dictionary is provided by Rasmus:
-" http://lerdorf.com/funclist.txt
-
 color peachpuff
 
 " Buffer explorer
@@ -105,14 +101,39 @@ noremap <tab> :MBEbp <Enter>
 " Projectify
 "source ~/project.vim 
 
-" Assembly code: highlight lines over 80 columns
-autocmd FileType asm au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
-autocmd FileType asm au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-
 " Custom highlighting
 so ~/.vim/plugin/highlights.vim
 Highlight 4 TODO
 
+" Load all help docs
+helptags ~/.vim/doc
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Env: PHP
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" ----- Dictionary completion for PHP -----
+" The completion dictionary is provided by Rasmus:
+" http://lerdorf.com/funclist.txt
+
 " set "make" command when editing php files
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Env: Assembly
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Assembly code: highlight lines over 80 columns
+autocmd FileType asm au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
+autocmd FileType asm au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Env: Ruby/Rails
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set nocompatible
+filetype plugin indent on
+"source rails.vim

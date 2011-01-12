@@ -1,0 +1,3 @@
+#!/bin/sh
+cp -R settings/.vim ~/.vim
+cp -R settings/.vimrc ~/.vimrc

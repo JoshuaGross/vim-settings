@@ -17,7 +17,8 @@ set autoread
 " Fast saving
 nmap <leader>w :w!<cr>
 
-" When vimrc is edited, reload it. (does this work?)
+" When vimrc is edited, reload it.
+" I don't think this works.
 autocmd! bufwritepost vimrc source ~/.vimrc
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -95,6 +96,8 @@ set backspace=2
 color peachpuff
 
 " Buffer explorer
+" README note: This maps TAB to shift one buffer left; SEMICOLON to shift right.
+" Try opening 5 or 6 files and then use tab/semicolon to navigate.
 noremap ; :MBEbn <Enter>
 noremap <tab> :MBEbp <Enter>
 
@@ -107,6 +110,22 @@ Highlight 4 TODO
 
 " Load all help docs
 helptags ~/.vim/doc
+
+" Super fancy status line
+" http://www.linux.com/archive/feature/120126
+:set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LINES=%L] 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins For Make IDE 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VTreeExplorer
+" Open with :VTreeExplore /path/
+let treeExplDirSort = 1
+let treeExplVertical = 1
+let treeExplWinSize = 40
+command! -n=? -complete=dir JTree :VSTreeExplore
+" Taglist and easytags!
+" README note: Make sure to install exuberant ctags on your system: http://vim-taglist.sourceforge.net/faq.html
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Env: PHP
@@ -136,4 +155,3 @@ autocmd FileType asm au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+',
 
 set nocompatible
 filetype plugin indent on
-"source rails.vim

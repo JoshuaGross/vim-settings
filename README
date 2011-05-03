@@ -24,3 +24,7 @@ and it isn't super-awesome, it's looking somewhere else. A few Google searches s
 5. Tags: 
       1. Make sure to install exuberant ctags on your system: http://vim-taglist.sourceforge.net/faq.html
 	  2. :TlistToggle
+
+== Special Environments
+* LaTeX: turns on word wrap and maps j and k to gj and gk (navigates visual lines instead of hard breaks)
+* Assembly: highlights (in red) everything after the 80th character on a line

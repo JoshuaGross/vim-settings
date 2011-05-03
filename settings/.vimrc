@@ -139,11 +139,9 @@ command! -n=? -complete=dir JTree :VSTreeExplore
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Env: Assembly
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " Assembly code: highlight lines over 80 columns
 autocmd FileType asm au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
 autocmd FileType asm au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
@@ -154,10 +152,10 @@ autocmd FileType asm au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+',
 autocmd FileType tex au BufWinEnter * set wrap
 autocmd FileType tex nmap <silent> j gj
 autocmd FileType tex nmap <silent> k gk
+autocmd FileType tex set lbr
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Env: Ruby/Rails
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 set nocompatible
 filetype plugin indent on
